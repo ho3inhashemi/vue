@@ -1,6 +1,6 @@
 <template>
 <h1>{{title}} text</h1>
-<modal />
+<modal :header="header" :text="text" />
 <input type="text" ref="name">
 <button @click="handleEvent">click</button>
 </template>
@@ -13,7 +13,8 @@ export default {
   components: {Modal},
   data(){
     return{
-      title: 'this is a test'
+     header : "Sign up for a Giveaway",
+     text : "Grab the course for the half price"
     }
   },
   methods: {
