@@ -1,8 +1,10 @@
 <template>
-<h1>{{title}} text</h1>
-<modal :header="header" :text="text" theme="sale"/>
-<input type="text" ref="name">
-<button @click="handleEvent">click</button>
+<h1>{{title}}</h1>
+<p> welcome... </p>
+<div v-if="showModal">
+<modal :header="header" :text="text" theme="sale" @close="changeModal"/>
+</div>
+<button @click="changeModal"> Show Modal </button>
 </template>
 
 <script>
@@ -13,15 +15,15 @@ export default {
   components: {Modal},
   data(){
     return{
+     title :"My vue App",
      header : "Sign up for a Giveaway",
-     text : "Grab the course for the half price"
+     text : "Grab the course for the half price",
+     showModal : false
     }
   },
   methods: {
-    handleEvent(){
-      console.log('event')
-      console.log(this.$refs.name)
-      this.$refs.name.classList.add('mahdi')
+    changeModal(){
+      this.showModal = !this.showModal 
     }
   }
 }
