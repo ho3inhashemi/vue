@@ -1,6 +1,6 @@
 <template>
 <h1>{{title}} text</h1>
-<modal :header="header" :text="text" />
+<modal :header="header" :text="text" theme="sale"/>
 <input type="text" ref="name">
 <button @click="handleEvent">click</button>
 </template>

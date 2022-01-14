@@ -1,6 +1,6 @@
 <template>
     <div class="backdrop">
-        <div class="modal">
+        <div class="modal" :class="{sale: theme == 'sale'}">
             <h1>{{header}}</h1>
             <p>
                 {{text}}
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-    props: ['header','text']
+    props: ['header','text' ,'theme']
 }
 </script>
 
@@ -42,6 +42,15 @@ h1{
 
 p{
     font-style: normal;
+}
+
+.sale{
+    background: crimson;
+    color: white;
+}
+
+.sale h1{
+    color:white;
 }
 
 </style>
