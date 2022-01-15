@@ -2,7 +2,10 @@
 <h1>{{title}}</h1>
 <p> welcome... </p>
 <div v-if="showModal">
-<modal :header="header" :text="text" theme="sale" @close="changeModal"/>
+<modal theme="sale" @close="changeModal">
+  <h1>OpenCode Giveaway!</h1>
+  <p>Grab the course for the half price</p>
+</modal> 
 </div>
 <button @click="changeModal"> Show Modal </button>
 </template>
